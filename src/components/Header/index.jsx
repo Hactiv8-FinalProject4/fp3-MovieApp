@@ -1,24 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Navbar } from './navbar';
+import { Search } from "./search";
 
 const index = () => {
   return (
-    <div className="header">
-      <div className="w-full bg-slate-950 h-10 ">
-        <Link to="/" className="text-white text-left p-4">
-          Movie App
-        </Link>
-        <Link to="/movies/popular" className="text-white text-left p-4">
-          Popular
-        </Link>
-        <Link to="/movies/top_rated" className="text-white text-left p-4">
-          Top Rated
-        </Link>
-        <Link to="/movies/upcoming" className="text-white text-left p-4">
-          Upcoming
-        </Link>
-      </div>
-    </div>
+    <header className="header bg-slate-950 py-4 px-5 flex flex-row justify-between items-center fixed w-full z-50 border-b border-slate-700">
+      <h1 className="text-white text-3xl font-bold">Movie App</h1>
+      <Navbar />
+      <Search />
+    </header>
   );
 };
 
