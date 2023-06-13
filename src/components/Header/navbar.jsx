@@ -6,7 +6,7 @@ export const Navbar = () => {
     <>
       <Navitem path="/" title="Home" />
       <Navitem path="/movies/popular" title="Popular" />
-      <Navitem path="/movies/top_rated" title="Top Rated" />
+      <Navitem path="/movies/top-rated" title="Top Rated" />
       <Navitem path="/movies/upcoming" title="Upcoming" />
     </>
   );

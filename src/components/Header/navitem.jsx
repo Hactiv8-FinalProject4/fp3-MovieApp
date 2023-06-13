@@ -5,8 +5,8 @@ import { scrollToTop } from "../../utils/scrollToTop";
 export const Navitem = ({ path, title }) => {
   const activeKey = useLocation().pathname;
   const style = `
-    text-white px-3 py-2 md:dark:hover:text-blue-500 
-    ${activeKey === path ? "text-blue-500" : ""}
+    px-3 py-2 md:dark:hover:text-blue-500 
+    ${activeKey === path ? "text-blue-500" : "text-white"}
   `;
 
   return (
