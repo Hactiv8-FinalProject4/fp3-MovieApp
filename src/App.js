@@ -13,7 +13,7 @@ function App() {
         <Route index element={<Home endpoint="movie/now_playing" />} />
         <Route path="/*" element={<Home endpoint="movie/now_playing" />} />
         <Route path="/movies/popular" element={<Home endpoint="movie/popular" />} />
-        <Route path="/movies/top_rated" element={<Home endpoint="movie/top_rated" />} />
+        <Route path="/movies/top-rated" element={<Home endpoint="movie/top_rated" />} />
         <Route path="/movies/upcoming" element={<Home endpoint="movie/upcoming" />} />
         <Route path="/movies/search/:keySearch" element={<Home endpoint="search/movie" />} />
       </Routes>
