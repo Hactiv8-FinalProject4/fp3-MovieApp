@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import MovieList from "../../components/MovieList";
 import { getData } from "../../utils/getData";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const Home = ({ endpoint }) => {
   const dispatch = useDispatch();
@@ -20,15 +20,25 @@ const Home = ({ endpoint }) => {
 
   return (
     <main className="text-white bg-black pt-28 pb-10">
-      {searchParams.keySearch
-        ? <h2 className="text-center text-xl font-bold mb-8 underline">Search movie: {searchParams.keySearch}</h2>
-        : ""}
+      {searchParams.keySearch ? (
+        <h2 className="text-center text-xl font-bold mb-8 underline">
+          Search movie: {searchParams.keySearch}
+        </h2>
+      ) : (
+        ""
+      )}
       <article className="flex flex-wrap justify-center gap-2 bg-black">
-        {movie.isLoading
-          ? <img src="/loading.gif" alt="loading..." className="m-10" />
-          : movie.popularMovies.map((movie, idx) => {
-            return <MovieList key={idx} movie={movie} />;
-          })}
+        {movie.isLoading ? (
+          <img src="/loading.gif" alt="loading..." className="m-10" />
+        ) : (
+          movie.popularMovies.map((movie, idx) => {
+            return (
+              <Link to={`/Detail/Movie/${movie.id}`} key={idx}>
+                <MovieList movie={movie} />
+              </Link>
+            );
+          })
+        )}
       </article>
     </main>
   );
