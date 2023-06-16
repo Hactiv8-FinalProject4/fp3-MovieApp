@@ -1,6 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getData } from "../../utils/getData";
 
+
+
 const movieSlice = createSlice({
   name: "movie",
   initialState: {
